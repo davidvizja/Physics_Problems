@@ -1,1 +1,111 @@
-1. Projectile MotionDifferential equations of motion: Assuming $x$ is horizontal, $y$ is vertical, and $m$ is the mass of the projectile, Newton's second law gives us:$$m\frac{d^2x}{dt^2} = 0$$$$m\frac{d^2y}{dt^2} = -mg$$Dividing out the mass yields the equations of motion for acceleration: $a_x = 0$ and $a_y = -g$.Time of flight: The total time $T$ occurs when the vertical position returns to zero. Integrating the vertical acceleration gives the standard formula:$$T = \frac{2v_0 \sin(\theta)}{g}$$Using 100 m/s, 37°, and 9.81 m/s²:$$T = \frac{2(100) \sin(37^\circ)}{9.81} \approx 12.27 \text{ seconds}$$Maximum height: Maximum height $H$ is reached when the vertical velocity is zero:$$H = \frac{v_0^2 \sin^2(\theta)}{2g}$$$$H = \frac{100^2 \sin^2(37^\circ)}{2(9.81)} \approx 184.6 \text{ meters}$$Range: The horizontal range $R$ is the horizontal velocity multiplied by the time of flight:$$R = \frac{v_0^2 \sin(2\theta)}{g}$$$$R = \frac{100^2 \sin(74^\circ)}{9.81} \approx 979.9 \text{ meters}$$2. Range OptimizationTo find the angle $\theta$ that maximizes the range $R(\theta)$, we take the first derivative with respect to $\theta$ and set it to zero. Assume initial velocity and gravity are constants:$$\frac{dR}{d\theta} = \frac{d}{d\theta} \left[ \frac{v_0^2 \sin(2\theta)}{g} \right] = \frac{2v_0^2 \cos(2\theta)}{g}$$Setting the derivative to zero:$$\frac{2v_0^2 \cos(2\theta)}{g} = 0$$This requires $\cos(2\theta) = 0$. In the context of a projectile on level ground ($0 \le \theta \le 90^\circ$):$$2\theta = 90^\circ \implies \theta = 45^\circ$$Because the second derivative $-\frac{4v_0^2 \sin(2\theta)}{g}$ is negative at 45°, this angle yields the absolute maximum range.3. Path IntersectionFirst, let's see if the paths cross in space by setting the coordinates equal for potentially different times $t_A$ and $t_B$:$$2 + t_A = 2t_B - 1 \implies t_A = 2t_B - 3$$$$8 - 3t_A = 2t_B + 2$$Substituting $t_A$ into the second equation:$$8 - 3(2t_B - 3) = 2t_B + 2$$$$17 - 6t_B = 2t_B + 2 \implies 15 = 8t_B \implies t_B = 1.875 \text{ s}$$Using $t_B$ to find $t_A$, we get $t_A = 0.75$ s. The paths intersect at coordinates (2.75, 5.75). However, because Alice arrives at 0.75 seconds and Bob arrives at 1.875 seconds, they will not collide.To find the minimum distance between them at any given time $t$, we create a distance-squared function $D(t)$:$$D(t) = (x_A(t) - x_B(t))^2 + (y_A(t) - y_B(t))^2$$$$D(t) = ((2+t) - (2t-1))^2 + ((8-3t) - (2t+2))^2$$$$D(t) = (3 - t)^2 + (6 - 5t)^2 = 26t^2 - 66t + 45$$To minimize $D(t)$, find where its derivative equals zero:$$D'(t) = 52t - 66 = 0 \implies t = \frac{33}{26} \approx 1.27 \text{ seconds}$$Plugging this time back into the distance formula:$$d_{min} = \sqrt{26\left(\frac{33}{26}\right)^2 - 66\left(\frac{33}{26}\right) + 45} = \frac{9}{\sqrt{26}} \approx 1.76 \text{ units}$$4. Vector CalculusVelocity is the first derivative of position, and acceleration is the second derivative.$$\vec{r}(t) = (3t^2)\hat{i} + (5t - 8t^2)\hat{j}$$$$\vec{v}(t) = \frac{d\vec{r}}{dt} = (6t)\hat{i} + (5 - 16t)\hat{j}$$$$\vec{a}(t) = \frac{d\vec{v}}{dt} = 6\hat{i} - 16\hat{j}$$5. Relative VelocityThe boat's velocity relative to the water is 5 m/s, and the river flows East at 2 m/s. To travel directly North, the boat must head West of North to counteract the river's current.Heading Angle: The East-West components must cancel out.$$5 \sin(\theta) = 2 \implies \sin(\theta) = 0.4$$$$\theta = \arcsin(0.4) \approx 23.6^\circ \text{ West of North}$$Time to Cross: The resultant velocity directly North is found using the Pythagorean theorem:$$v_{North} = \sqrt{5^2 - 2^2} = \sqrt{21} \approx 4.58 \text{ m/s}$$To cross a 200-meter wide river:$$\text{Time} = \frac{200}{4.58} \approx 43.6 \text{ seconds}$$6. Variable VelocityGiven velocity $v(t) = t^2 + 2t - 5$.Position: Integrate velocity and use the initial condition $x(0) = 4$ to find the constant of integration $C$:$$x(t) = \int (t^2 + 2t - 5) dt = \frac{1}{3}t^3 + t^2 - 5t + C$$Since $x(0) = 4$, $C = 4$.At time t = 3:$$x(3) = \frac{1}{3}(27) + 9 - 15 + 4 = 7 \text{ units}$$Acceleration: Differentiate velocity:$$a(t) = \frac{dv}{dt} = 2t + 2$$At time t = 3:$$a(3) = 2(3) + 2 = 8 \text{ units/s}^2$$7. Elimination of Time and Interpretation of AccelerationGiven $x(t)=2t^2$ and $y(t)=3t^3$.Eliminate parameter t: From the first equation, assuming $t \ge 0$, we have $t = \sqrt{x/2}$. Substituting into $y$:$$y(x) = 3\left(\frac{x}{2}\right)^{\frac{3}{2}}$$Trajectory: This represents a semi-cubical parabola curving upward in the first quadrant.Kinematic Vectors:$$\vec{v}(t) = \left(\frac{dx}{dt}, \frac{dy}{dt}\right) = (4t, 9t^2)$$$$|\vec{v}(t)| = \sqrt{16t^2 + 81t^4} = t\sqrt{16 + 81t^2}$$$$\vec{a}(t) = \left(\frac{d^2x}{dt^2}, \frac{d^2y}{dt^2}\right) = (4, 18t)$$$$|\vec{a}(t)| = \sqrt{16 + 324t^2}$$Is acceleration constant? No. Because the y-component of the acceleration vector depends on $t$, the acceleration changes continuously over time.8. Circular MotionThe centripetal acceleration $a_c$ is determined by the Earth's radius and rotational speed.Radius = 6378 km = 6,378,000 meters.Time for one rotation = 24 hours = 86,400 seconds.Angular velocity $\omega = \frac{2\pi}{86400} \approx 7.272 \times 10^{-5} \text{ rad/s}$.$$a_c = R\omega^2 = 6378000 \times (7.272 \times 10^{-5})^2 \approx 0.0337 \text{ m/s}^2$$9. Momentum ComparisonMomentum is mass times velocity ($p = mv$).Fly: 0.002 kg * 10 m/s = 0.02 kg m/sTennis ball: 0.06 kg * 1 m/s = 0.06 kg m/sThe tennis ball has three times more momentum than the fly.10. KinematicsGiven $\vec{r}(t) = (a \cos(\omega t), b \sin(\omega t), bt)$.a) Equation of trajectoryBy manipulating the $x$ and $y$ components, we get $\cos(\omega t) = x/a$ and $\sin(\omega t) = y/b$. Squaring and adding them yields the equation of an elliptical cylinder:$$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$$Substituting $t = z/b$ into the position vector confirms the point spirals upward around this cylinder, tracing an elliptical helix.b) Path lengthThe speed is the magnitude of the velocity vector:$$\vec{v}(t) = (-a\omega \sin(\omega t), b\omega \cos(\omega t), b)$$$$|\vec{v}(t)| = \sqrt{a^2\omega^2 \sin^2(\omega t) + b^2\omega^2 \cos^2(\omega t) + b^2}$$The path length from $t=0$ to $t=t_0$ is the integral of the speed:$$L = \int_0^{t_0} \sqrt{a^2\omega^2 \sin^2(\omega t) + b^2\omega^2 \cos^2(\omega t) + b^2} \, dt$$Unless $a = b$, this results in an incomplete elliptic integral of the second kind, which requires numerical approximation to solve fully.c) Python Script and Special CasesYou can run this code to visualize the movement.If $a = b$, the path simplifies to a standard circular helix.If $b = 0$, the path restricts to purely 2D elliptical oscillation on the XY plane.If $\omega = 0$, the point only moves in a straight line up the Z-axis.
+# Section 1: Mechanics I Solutions
+
+---
+
+## 1. Projectile Motion
+
+**Differential Equations of Motion**
+Assuming $x$ is horizontal, $y$ is vertical, and $g$ is gravity:
+* **Horizontal:** $m \frac{d^2x}{dt^2} = 0 \implies \frac{d^2x}{dt^2} = 0$
+* **Vertical:** $m \frac{d^2y}{dt^2} = -mg \implies \frac{d^2y}{dt^2} = -g$
+
+**Time of Flight ($T$)**
+Using $v_0 = 100$ m/s and $\theta = 37^\circ$:
+$$T = \frac{2v_0 \sin\theta}{g} = \frac{2(100) \sin(37^\circ)}{9.81} \approx 12.27 \text{ s}$$
+
+**Maximum Height ($H$)**
+$$H = \frac{v_0^2 \sin^2\theta}{2g} = \frac{100^2 \sin^2(37^\circ)}{2(9.81)} \approx 184.6 \text{ m}$$
+
+**Range ($R$)**
+$$R = \frac{v_0^2 \sin(2\theta)}{g} = \frac{100^2 \sin(74^\circ)}{9.81} \approx 979.9 \text{ m}$$
+
+---
+
+## 2. Range Optimization
+
+To find the maximum of $R(\theta) = \frac{v_0^2 \sin(2\theta)}{g}$, we differentiate with respect to $\theta$:
+$$\frac{dR}{d\theta} = \frac{v_0^2}{g} \cdot 2\cos(2\theta) = 0$$
+$$\cos(2\theta) = 0 \implies 2\theta = 90^\circ \implies \theta = 45^\circ$$
+The range is maximized at **45°**.
+
+---
+
+## 3. Path Intersection
+
+**Spatial Intersection:**
+Set $A(t_1) = B(t_2)$:
+1. $2 + t_1 = 2t_2 - 1 \implies t_1 = 2t_2 - 3$
+2. $8 - 3t_1 = 2t_2 + 2$
+
+Substitute (1) into (2):
+$8 - 3(2t_2 - 3) = 2t_2 + 2 \implies 17 - 6t_2 = 2t_2 + 2 \implies t_2 = 1.875 \text{ s}$
+Then $t_1 = 0.75 \text{ s}$. 
+The paths intersect at **(2.75, 5.75)**, but since $t_1 \neq t_2$, **they do not collide.**
+
+**Minimum Distance:**
+Minimize $D^2(t) = (x_A-x_B)^2 + (y_A-y_B)^2$:
+$D^2(t) = (3-t)^2 + (6-5t)^2 = 26t^2 - 66t + 45$
+Derivative: $52t - 66 = 0 \implies t \approx 1.27 \text{ s}$
+Minimum distance $d = \sqrt{D^2(1.27)} \approx 1.76 \text{ units}$.
+
+---
+
+## 4. Vector Calculus
+
+Given $\vec{r}(t) = (3t^2)\hat{i} + (5t - 8t^2)\hat{j}$:
+* **Velocity:** $\vec{v}(t) = \frac{d\vec{r}}{dt} = (6t)\hat{i} + (5 - 16t)\hat{j}$
+* **Acceleration:** $\vec{a}(t) = \frac{d\vec{v}}{dt} = 6\hat{i} - 16\hat{j}$
+
+---
+
+## 5. Relative Velocity
+
+* **Direction:** $\sin\theta = \frac{v_{river}}{v_{boat}} = \frac{2}{5} \implies \theta \approx 23.6^\circ$ **West of North**.
+* **Time:** $v_{resultant} = \sqrt{5^2 - 2^2} = \sqrt{21} \approx 4.58 \text{ m/s}$.
+    $t = \frac{200}{4.58} \approx 43.6 \text{ s}$.
+
+---
+
+## 6. Variable Velocity
+
+$v(t) = t^2 + 2t - 5$ with $x(0) = 4$.
+* **Position at $t=3$:** $x(t) = \int v(t)dt = \frac{1}{3}t^3 + t^2 - 5t + 4$.
+    $x(3) = 9 + 9 - 15 + 4 = 7$.
+* **Acceleration at $t=3$:** $a(t) = \frac{dv}{dt} = 2t + 2 \implies a(3) = 8$.
+
+---
+
+## 7. Elimination of Time
+
+Given $x=2t^2, y=3t^3$:
+* **Equation:** $t = \sqrt{x/2} \implies y = 3(x/2)^{3/2}$.
+* **Kinematics:**
+    $\vec{v}(t) = (4t, 9t^2)$; $|\vec{v}(t)| = t\sqrt{16 + 81t^2}$
+    $\vec{a}(t) = (4, 18t)$; $|\vec{a}(t)| = \sqrt{16 + 324t^2}$
+* **Constant Acceleration?** No, the magnitude depends on $t$.
+
+---
+
+## 8. Circular Motion
+
+$R = 6.378 \times 10^6 \text{ m}$, $T = 86400 \text{ s}$.
+$\omega = \frac{2\pi}{T} \approx 7.27 \times 10^{-5} \text{ rad/s}$.
+$a_c = R\omega^2 \approx 0.0337 \text{ m/s}^2$.
+
+---
+
+## 9. Momentum Comparison
+
+* **Fly:** $p = (0.002)(10) = 0.02 \text{ kg}\cdot\text{m/s}$
+* **Ball:** $p = (0.06)(1) = 0.06 \text{ kg}\cdot\text{m/s}$
+The **tennis ball** has more momentum.
+
+---
+
+## 10. Kinematics of Point M
+
+**a) Trajectory:**
+$\frac{x^2}{a^2} + \frac{y^2}{b^2} = 1$. This is an **elliptical helix** moving along $z = bt$.
+
+**b) Path Length ($L$):**
+$L = \int_0^{t_0} \sqrt{a^2\omega^2\sin^2\omega t + b^2\omega^2\cos^2\omega t + b^2} dt$.

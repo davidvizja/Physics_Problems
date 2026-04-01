@@ -1,102 +1,103 @@
-# Section 2: Mechanics II
-
-Your soultions go here!!!!
+# Section 2: Mechanics II - Solutions & Explanations
 
 ---
 
-Below it is just a copy of the tasks, so you can easily navigate to the task you want to solve. You can also use the links in the sidebar to navigate to the tasks.
-
 ## 1. Gravitational Dependence
 
-A simple pendulum has a period of 4 seconds on Earth. What would its period be on the Moon, where the gravitational acceleration is about 1/6th of Earth's?
+**Problem:** A pendulum has a period of 4s on Earth. Find its period on the Moon ($g_m \approx g/6$) and find the length required for a 1s period on Earth.
 
-What is the required length of a simple pendulum to have a period of exactly 1 second on Earth?
+**Explanation:**
+The period $T$ of a simple pendulum is given by:
+$$T = 2\pi\sqrt{\frac{L}{g}}$$
+
+* **Period on the Moon:**
+    Since $g_{moon} = \frac{g_{earth}}{6}$, the period is proportional to $1/\sqrt{g}$.
+    $$T_{moon} = T_{earth} \times \sqrt{6} = 4 \times \sqrt{6} \approx 9.80\text{ s}$$
+* **Length for 1s Period on Earth:**
+    Rearranging for $L$: $L = \frac{g T^2}{4\pi^2}$.
+    $$L = \frac{9.81 \times 1^2}{4\pi^2} \approx 0.248\text{ m (or 24.8 cm)}$$
+
+---
 
 ## 2. Harmonic Motion
 
-A 10 kg mass is attached to a spring and oscillates according to the equation $x(t) = 0.2 \cos(10\pi t)$ (in meters). What is the spring constant $k$? What is the total mechanical energy of the system?
+**Problem:** $m = 10\text{ kg}$, $x(t) = 0.2 \cos(10\pi t)$. Find $k$ and total energy.
+
+**Explanation:**
+The standard form is $x(t) = A \cos(\omega t)$.
+From the equation: $A = 0.2\text{ m}$ and $\omega = 10\pi\text{ rad/s}$.
+
+* **Spring Constant ($k$):**
+    Using $\omega^2 = \frac{k}{m}$:
+    $$k = m\omega^2 = 10 \times (10\pi)^2 = 1000\pi^2 \approx 9869.6\text{ N/m}$$
+* **Total Mechanical Energy ($E$):**
+    $$E = \frac{1}{2} k A^2 = \frac{1}{2} (1000\pi^2) (0.2)^2 = 20\pi^2 \approx 197.4\text{ J}$$
+
+---
 
 ## 3. Conservation of Energy
 
-A pendulum with a length of 1.0 meter is released from an initial angle of $15^\circ$. What is the speed of the pendulum bob at the bottom of its swing?
+**Problem:** $L = 1.0\text{ m}$, $\theta = 15^\circ$. Find speed at the bottom.
+
+**Explanation:**
+Using Conservation of Energy: $mgh = \frac{1}{2}mv^2 \implies v = \sqrt{2gh}$.
+The height $h$ dropped is $L - L\cos\theta$:
+$$h = 1.0(1 - \cos 15^\circ) \approx 0.0341\text{ m}$$
+$$v = \sqrt{2 \times 9.81 \times 0.0341} \approx 0.818\text{ m/s}$$
+
+---
 
 ## 4. Energy & Momentum
 
-A 0.5 kg block slides down a frictionless track from a height of 3.0 m. At the bottom, it collides and sticks to a 1.5 kg block, which is initially at rest. What is the speed of the combined mass just after the collision?
+**Problem:** $0.5\text{ kg}$ block falls $3.0\text{ m}$ and hits a resting $1.5\text{ kg}$ block (sticks). Find final speed.
+
+**Explanation:**
+1.  **Speed before collision ($v_1$):** $v_1 = \sqrt{2gh} = \sqrt{2 \times 9.81 \times 3} \approx 7.67\text{ m/s}$.
+2.  **Conservation of Momentum:** $m_1 v_1 = (m_1 + m_2) v_f$.
+    $$(0.5)(7.67) = (0.5 + 1.5) v_f \implies 3.835 = 2 v_f \implies v_f \approx 1.92\text{ m/s}$$
+
+---
 
 ## 5. Inelastic Collision
 
-A 70 kg runner moving at $3 \text{ m/s}$ jumps onto a 140 kg stationary cart. What is the final speed of the cart with the runner? Is kinetic energy conserved in this collision? Explain.
+**Problem:** $70\text{ kg}$ runner ($3\text{ m/s}$) jumps on $140\text{ kg}$ cart. Final speed? Is $K$ conserved?
+
+**Explanation:**
+* **Final Speed:** $m_1 v_1 = (m_1 + m_2) v_f$.
+    $$70 \times 3 = (70 + 140) v_f \implies 210 = 210 v_f \implies v_f = 1\text{ m/s}$$
+* **Conservation of Energy:** No, kinetic energy is not conserved in a perfectly inelastic collision. It is lost to heat and deformation.
+    $$K_i = \frac{1}{2}(70)(3^2) = 315\text{ J} \quad \text{vs} \quad K_f = \frac{1}{2}(210)(1^2) = 105\text{ J}$$
+
+---
 
 ## 6. Energy Dissipation
 
-A tennis ball is dropped from a height of $2.0$ m. After each bounce, it loses 30% of its mechanical energy. To what height does it rise after the second bounce?
+**Problem:** Drop height $2.0\text{ m}$. Loses 30% energy per bounce. Height after 2nd bounce?
+
+**Explanation:**
+Energy is proportional to height ($E = mgh$). If it loses 30%, it retains 70% ($0.7$).
+* Height 1: $h_1 = 2.0 \times 0.7 = 1.4\text{ m}$
+* Height 2: $h_2 = 1.4 \times 0.7 = 0.98\text{ m}$
+
+---
 
 ## 7. Dynamics with Friction
 
-A 5 kg block is placed on a 10 kg block. A horizontal force of 45 N is applied to the 10 kg block, and the 5 kg block is tied to the wall. The coefficient of kinetic friction between all moving surfaces is 0.2. Find the acceleration of the 10 kg block.
+**Problem:** $m_1=5\text{ kg}$ (top, tied), $m_2=10\text{ kg}$ (bottom, pulled $45\text{ N}$). $\mu_k = 0.2$. Find $a$ of $m_2$.
 
-## 8. Work of a variable force
+**Explanation:**
+Two friction forces act on the bottom block ($m_2$):
+1.  Friction from top block: $f_1 = \mu_k m_1 g = 0.2 \times 5 \times 9.81 = 9.81\text{ N}$
+2.  Friction from floor: $f_2 = \mu_k (m_1 + m_2) g = 0.2 \times 15 \times 9.81 = 29.43\text{ N}$
+Net Force on $m_2$: $F_{net} = 45 - 9.81 - 29.43 = 5.76\text{ N}$.
+$$a = \frac{F_{net}}{m_2} = \frac{5.76}{10} = 0.576\text{ m/s}^2$$
 
-Given a one-dimensional force:
+---
 
-$$
-F(x)=-kx
-$$
+## 8. Work of a Variable Force ($F = -kx$)
 
-* Write down the equation of motion and solve it.
-* Calculate the work done during the displacement from $0$ to $x_0$.
-* Interpret the result as potential energy.
-* Verify the relationship $F = -\frac{dU}{dx}$.
-* Draw the graph of $F(x)$ and $U(x)$.
-
-## 9. Vertical throw with drag
-
-We have the equation of motion:
-
-$$
-m\frac{dv}{dt} = -mg - kv
-$$
-
-with initial conditions $v(0)=v_0$, $x(0)=10$.
-
-* Solve the equation by analytical methods.
-* Determine the maximum height.
-* Compare with the case without drag.
-* Perform a numerical simulation using HTML or Pythyon.
-
-## 10. Force field and power
-
-In a certain force field, the equations of motion of a particle with mass $m=0.5$ kg are as follows:
-
-$$
-x = 5t^2 - t, \quad y = 2t^3, \quad z = -3t + 2
-$$
-
-Find the time dependence of: the particle's velocity, the particle's momentum, the particle's acceleration, the force acting on the particle, and the power transferred by the field to the particle.
-
-## 11. Dynamics with a time-dependent force
-
-A particle of mass $m=3$ kg moves in a force field $F$ dependent on time in the following way:
-
-$$
-F = (15t, 3t-12, -6t^2) \, \text{N}
-$$
-
-Assuming initial conditions $r_0=(5,2,-3)$ m, $v_0=(2,0,1)$ m/s, find the dependence of the particle's position and velocity on time.
-
-## 12. Work and energy with a constant force
-
-A constant force acts on a body of mass $m = 2\ \mathrm{kg}$:
-
-$$
-\vec F = [6, 2]\ \mathrm{N}
-$$
-
-The body starts with an initial velocity $\vec v(0) = (1, -1)\ \mathrm{\frac{m}{s}}$ from the point $\vec r(0)=(0,0)\ \mathrm{m}$. 
-* Determine $\vec a(t)$.
-* Determine $\vec v(t)$.
-* Determine $\vec r(t)$.
-* Draw the trajectory of the motion.
-* Calculate the work done by the force at time $t=3\ \mathrm{s}$.
-* Check the consistency with the work-energy theorem.
+**Explanation:**
+* **Equation of Motion:** $m \frac{d^2x}{dt^2} = -kx \implies x(t) = A\cos(\omega t + \phi)$ where $\omega = \sqrt{k/m}$.
+* **Work Done:** $W = \int_{0}^{x_0} -kx \, dx = [-\frac{1}{2}kx^2]_0^{x_0} = -\frac{1}{2}kx_0^2$.
+* **Potential Energy:** Work done by a conservative force is $-\Delta U$, so $U(x) = \frac{1}{2}kx^2$.
+* **Verification:** $-\frac{dU}{dx} = -\frac{d}{

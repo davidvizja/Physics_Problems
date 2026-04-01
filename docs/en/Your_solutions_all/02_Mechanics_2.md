@@ -100,4 +100,56 @@ $$a = \frac{F_{net}}{m_2} = \frac{5.76}{10} = 0.576\text{ m/s}^2$$
 * **Equation of Motion:** $m \frac{d^2x}{dt^2} = -kx \implies x(t) = A\cos(\omega t + \phi)$ where $\omega = \sqrt{k/m}$.
 * **Work Done:** $W = \int_{0}^{x_0} -kx \, dx = [-\frac{1}{2}kx^2]_0^{x_0} = -\frac{1}{2}kx_0^2$.
 * **Potential Energy:** Work done by a conservative force is $-\Delta U$, so $U(x) = \frac{1}{2}kx^2$.
-* **Verification:** $-\frac{dU}{dx} = -\frac{d}{
+* **Verification:** $-\frac{dU}{dx} = -\frac{d}{dx}(\frac{1}{2}kx^2) = -kx$, which equals $F$.
+
+---
+
+## 9. Vertical Throw with Drag
+
+**Equation:** $m\frac{dv}{dt} = -mg - kv$
+
+**Explanation:**
+* **Solution:** Separating variables $\int \frac{dv}{g + \frac{k}{m}v} = -\int dt$ yields:
+    $$v(t) = (v_0 + \frac{mg}{k})e^{-\frac{k}{m}t} - \frac{mg}{k}$$
+* **Max Height:** Set $v(t) = 0$, solve for $t$, and integrate $v(t)$ to find $x(t_{max})$.
+* **Comparison:** With drag, the ball reaches a lower maximum height and takes less time to reach it compared to the vacuum case ($h = \frac{v_0^2}{2g}$).
+
+---
+
+## 10. Force Field and Power
+
+**Given:** $m = 0.5\text{ kg}$, $x = 5t^2 - t, y = 2t^3, z = -3t + 2$.
+
+**Solution:**
+1.  **Velocity ($v$):** $(\frac{dx}{dt}, \frac{dy}{dt}, \frac{dz}{dt}) = (10t - 1, 6t^2, -3)$
+2.  **Momentum ($p$):** $mv = (5t - 0.5, 3t^2, -1.5)$
+3.  **Acceleration ($a$):** $\frac{dv}{dt} = (10, 12t, 0)$
+4.  **Force ($F$):** $ma = (5, 6t, 0)$
+5.  **Power ($P$):** $F \cdot v = 5(10t-1) + 6t(6t^2) + 0 = 36t^3 + 50t - 5$
+
+---
+
+## 11. Time-Dependent Force
+
+**Given:** $m=3\text{ kg}$, $F = (15t, 3t-12, -6t^2)$.
+
+**Solution:**
+1.  **Acceleration:** $a = F/m = (5t, t-4, -2t^2)$
+2.  **Velocity:** $v(t) = \int a \, dt + v_0 = (\frac{5}{2}t^2+2, \frac{1}{2}t^2-4t, -\frac{2}{3}t^3+1)$
+3.  **Position:** $r(t) = \int v \, dt + r_0 = (\frac{5}{6}t^3+2t+5, \frac{1}{6}t^3-2t^2+2, -\frac{1}{6}t^4+t-3)$
+
+---
+
+## 12. Work and Energy (Constant Force)
+
+**Given:** $m=2\text{ kg}$, $F=[6,2]$, $v_0=(1,-1)$, $r_0=(0,0)$.
+
+**Solution:**
+* **Kinematics ($t=3$):**
+    $a = (3, 1)$
+    $v(3) = v_0 + at = (1+9, -1+3) = (10, 2)$
+    $r(3) = r_0 + v_0t + \frac{1}{2}at^2 = (3+13.5, -3+4.5) = (16.5, 1.5)$
+* **Work:** $W = F \cdot \Delta r = 6(16.5) + 2(1.5) = 99 + 3 = 102\text{ J}$.
+* **Theorem Check:**
+    $\Delta K = \frac{1}{2}m(v_f^2 - v_i^2) = \frac{1}{2}(2)[(10^2+2^2) - (1^2+(-1)^2)]$
+    $\Delta K = 104 - 2 = 102\text{ J}$. (Consistent)

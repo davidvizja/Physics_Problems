@@ -180,9 +180,7 @@ Depending on the discriminant ($\gamma^2-\omega_0^2$), the system behaves in thr
     $$x(t)=(C_1+C_2 t)e^{-\gamma t}$$
 * **Overdamped ($b^2>4mk$ or $\gamma>\omega_0$):**
     The roots are real and distinct. The system exponentially decays to equilibrium without oscillating, but slower than the critically damped case.
-    $$x(t)=C_1 e^{r_1 t}+C_2 e^{r_2 t}$$
-
-*(Note: Interactive HTML animation steps omitted as requested.)*
+    $$x(t)=C_1 e^{r_1 t}+C_2 e^{r_2 t}$
 
 ---
 
@@ -190,12 +188,8 @@ Depending on the discriminant ($\gamma^2-\omega_0^2$), the system behaves in thr
 
 **Problem:** Create an HTML animation to place point sources of waves described by $u(\vec{r},t)=\frac{A}{|\vec{r}-\vec{r_0}|^\alpha} \sin(k |\vec{r} - \vec{r_0}| - \omega t)$ with an adjustable decay parameter $\alpha$.
 
-*(Note: Interactive HTML animation code omitted as requested.)*
-
 ---
 
 ## 11. Animation: Two-Slit Interference
 
 **Problem:** Simulate Young's Double Slit experiment visualizing the real-time superposition equation given. Allow adjustment of distance $d$ and wavelength $\lambda$.
-
-*(Note: Interactive HTML animation code omitted as requested.)*

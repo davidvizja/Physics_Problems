@@ -1,4 +1,4 @@
-# Section 4: Electromagnetism I - Presentation Solutions
+# Section 4: Electromagnetism I - Solutions
 
 ## 1. Coulomb's Law
 **Problem:** Four point charges of +1.0 C each are placed at the corners of a square with sides of 1.0 m. Calculate the magnitude and direction of the electric force on a charge of -2.0 C placed at the center of the square.

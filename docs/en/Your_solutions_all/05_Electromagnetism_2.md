@@ -45,8 +45,7 @@ Given:
 *   $\theta = 90^\circ \implies \sin(90^\circ) = 1$
 
 $$ B = \frac{(4\pi \times 10^{-7})(3)(0.1)(1)}{4 \pi (0.2)^2} = \frac{10^{-7} \times 0.3}{0.04} = 7.5 \times 10^{-7} \text{ T} $$
-**Answer:** The magnetic field at point $P$ is $7.5 \times 10^{-7} \text{ T}$ or $0.75 \text{ \mu T}$.
-
+**Answer:** magnetic field at point $P$ is $7.5 \times 10^{-7} \text{ T}$ or $0.75 \mu\text{T}$.
 ---
 
 ## 4. Magnetic Torque

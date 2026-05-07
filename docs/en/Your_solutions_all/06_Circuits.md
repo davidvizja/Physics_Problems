@@ -120,6 +120,39 @@ $$L \frac{d^2Q}{dt^2} + R \frac{dQ}{dt} + \frac{1}{C}Q = V(t)$$
 
 ---
 
-## 15. Resistor Cube*
-For 12 identical resistors $R$ forming a cube, the equivalent resistance between opposite corners is found via symmetry (splitting current into 3 paths, then 6, then 3):
-*   $R_{eq} = (\frac{1}{3}R + \frac{1}{6}R + \frac{1}{3}R) = \mathbf{\frac{5}{6}R}$
+## 15. Resistor Cube* (Detailed Symmetry Solution)
+
+**Problem:** A cube is constructed from 12 identical resistors, each with resistance $R$. Calculate the equivalent resistance $R_{eq}$ between two opposite corners (e.g., from the bottom-front-left corner to the top-back-right corner).
+
+### Step-by-Step Analysis using Symmetry:
+
+To solve this, we imagine a total current $I$ entering the cube at one corner (Node A) and leaving from the opposite corner (Node B).
+
+**1. The Entrance (3-way split):**
+At the entry node, the current $I$ encounters **3 identical edges**. Since the cube is perfectly symmetrical relative to the exit point, the current must divide equally.
+*   Current in each of the first 3 edges = $\frac{1}{3}I$
+*   Voltage drop across these edges = $V_1 = (\frac{1}{3}I)R$
+
+**2. The Middle (6-way split):**
+Each of those 3 currents reaches a new node. From each of these nodes, there are **2 new paths** available (leading toward the exit). This creates a total of 6 paths in the middle "belt" of the cube.
+*   Current in each of these 6 edges = $\frac{1}{2} \times (\frac{1}{3}I) = \frac{1}{6}I$
+*   Voltage drop across these edges = $V_2 = (\frac{1}{6}I)R$
+
+**3. The Exit (3-way merge):**
+Finally, these 6 paths merge into **3 final edges** that meet at the exit node.
+*   Current in each of the last 3 edges = $\frac{1}{3}I$
+*   Voltage drop across these edges = $V_3 = (\frac{1}{3}I)R$
+
+### Calculating Total Resistance:
+The total voltage drop $V_{total}$ across the cube is the sum of the voltage drops along any single path from start to finish:
+$$V_{total} = V_1 + V_2 + V_3$$
+$$V_{total} = \frac{1}{3}IR + \frac{1}{6}IR + \frac{1}{3}IR$$
+
+To add these, find a common denominator (6):
+$$V_{total} = (\frac{2}{6} + \frac{1}{6} + \frac{2}{6})IR = \frac{5}{6}IR$$
+
+According to Ohm's Law, $R_{eq} = \frac{V_{total}}{I}$. Therefore:
+$$\mathbf{R_{eq} = \frac{5}{6}R}$$
+
+**Conclusion:**
+For a cube of $1\,\Omega$ resistors, the equivalent resistance is $0.833\,\Omega$. This result highlights how equipotential nodes (nodes at the same "distance" from the start) can be treated as being connected, simplifying a 3D network into a simple series of parallel groups.

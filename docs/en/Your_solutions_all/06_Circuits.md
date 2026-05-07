@@ -1,858 +1,125 @@
-# Section 6: Circuits
+# Section 6: Circuits - Solutions
+
+## 1. Series and Parallel Circuit
+**Given:** $R_1 = 15\,\Omega$, $R_2 = 30\,\Omega$, $R_3 = 50\,\Omega$, $V = 12\,\text{V}$.
+
+### Case A: Series Connection
+*   **Equivalent Resistance ($R_{eq}$):**
+    $$R_{eq} = R_1 + R_2 + R_3 = 15 + 30 + 50 = 95\,\Omega$$
+*   **Total Current ($I$):**
+    $$I = \frac{V}{R_{eq}} = \frac{12}{95} \approx 0.126\,\text{A}$$
+
+### Case B: Parallel Connection
+*   **Equivalent Resistance ($R_{eq}$):**
+    $$\frac{1}{R_{eq}} = \frac{1}{R_1} + \frac{1}{R_2} + \frac{1}{R_3} = \frac{1}{15} + \frac{1}{30} + \frac{1}{50} = \frac{10+5+3}{150} = \frac{18}{150}$$
+    $$R_{eq} = \frac{150}{18} \approx 8.33\,\Omega$$
+*   **Total Current ($I$):**
+    $$I = \frac{V}{R_{eq}} = \frac{12}{8.33} \approx 1.44\,\text{A}$$
 
 ---
 
-# 1. Series and Parallel Circuit
-
-Given:
-
-- \(R_1 = 15\Omega\)
-- \(R_2 = 30\Omega\)
-- \(R_3 = 50\Omega\)
-- Battery voltage: \(V = 12\text{ V}\)
+## 2. Resistors
+Using exactly three $1\,\Omega$ resistors, the unique equivalent resistances are:
+1.  **All in Series:** $1 + 1 + 1 = \mathbf{3\,\Omega}$
+2.  **All in Parallel:** $1 / (\frac{1}{1} + \frac{1}{1} + \frac{1}{1}) = \mathbf{1/3\,\Omega \approx 0.33\,\Omega}$
+3.  **Series-Parallel (Two parallel, one series):** $(\frac{1 \times 1}{1 + 1}) + 1 = 0.5 + 1 = \mathbf{1.5\,\Omega}$
+4.  **Parallel-Series (Two series, one parallel):** $\frac{(1 + 1) \times 1}{(1 + 1) + 1} = \frac{2}{3} \approx \mathbf{0.67\,\Omega}$
 
 ---
 
-## (a) Resistors Connected in Series
-
-### Step 1: Find Equivalent Resistance
-
-For resistors in series:
-
-$$
-R_{\text{eq}} = R_1 + R_2 + R_3
-$$
-
-Substitute the values:
-
-$$
-R_{\text{eq}} = 15 + 30 + 50
-$$
-
-$$
-R_{\text{eq}} = 95\Omega
-$$
+## 3. Mixed Circuit (Figure R1)
+For a standard bridge or ladder where two $5\,\Omega$ resistors are in parallel, and that combination is in series with a third $5\,\Omega$ resistor:
+*   $R_{parallel} = \frac{5 \times 5}{5 + 5} = 2.5\,\Omega$
+*   $R_{eq} = 2.5 + 5 = \mathbf{7.5\,\Omega}$
 
 ---
 
-### Step 2: Find Current from the Battery
-
-Use Ohm’s law:
-
-$$
-I = \frac{V}{R}
-$$
-
-$$
-I = \frac{12}{95}
-$$
-
-$$
-I \approx 0.126\text{ A}
-$$
+## 4. Mixed Circuit (Figure R2)
+In a symmetric bridge circuit where all resistors are $10\,\Omega$:
+*   By symmetry, if it is a balanced Wheatstone bridge, the central branch carries no current.
+*   The circuit simplifies to two parallel branches, each containing two $10\,\Omega$ resistors in series.
+*   $R_{branch} = 10 + 10 = 20\,\Omega$
+*   $R_{eq} = \frac{20 \times 20}{20 + 20} = \mathbf{10\,\Omega}$
 
 ---
 
-## Final Answer
+## 5. Kirchhoff's Laws
+**Equations based on clockwise loops:**
+1.  **Loop 1 (Left):** $\mathcal{E}_1 - I_1(R_1 + r_w) - I_2(R_2) = 0 \Rightarrow 4.5 - 21I_1 - 10I_2 = 0$
+2.  **Loop 2 (Right):** $\mathcal{E}_2 - I_3(r_w) - I_2(R_2) = 0 \Rightarrow 9 - 1I_3 - 10I_2 = 0$
+3.  **Junction Rule:** $I_3 = I_1 + I_2$
 
-$$
-\boxed{R_{\text{eq}} = 95\Omega}
-$$
-
-$$
-\boxed{I \approx 0.126\text{ A}}
-$$
-
----
-
-# (b) Resistors Connected in Parallel
-
-### Step 1: Find Equivalent Resistance
-
-For parallel resistors:
-
-$$
-\frac{1}{R_{\text{eq}}}
-=
-\frac{1}{R_1}
-+
-\frac{1}{R_2}
-+
-\frac{1}{R_3}
-$$
-
-Substitute values:
-
-$$
-\frac{1}{R_{\text{eq}}}
-=
-\frac{1}{15}
-+
-\frac{1}{30}
-+
-\frac{1}{50}
-$$
-
-Find common denominator:
-
-$$
-\frac{1}{R_{\text{eq}}}
-=
-\frac{10+5+3}{150}
-=
-\frac{18}{150}
-=
-\frac{3}{25}
-$$
-
-Invert both sides:
-
-$$
-R_{\text{eq}}
-=
-\frac{25}{3}
-$$
-
-$$
-R_{\text{eq}} \approx 8.33\Omega
-$$
+**Solving:**
+*   From (2) and (3): $9 - (I_1 + I_2) - 10I_2 = 0 \Rightarrow 9 - I_1 - 11I_2 = 0 \Rightarrow I_1 = 9 - 11I_2$
+*   Substitute into (1): $4.5 - 21(9 - 11I_2) - 10I_2 = 0$
+*   $4.5 - 189 + 231I_2 - 10I_2 = 0 \Rightarrow 221I_2 = 184.5$
+*   **$I_2 \approx 0.835\,\text{A}$**
+*   **$I_1 = 9 - 11(0.835) \approx -0.185\,\text{A}$**
+*   **$I_3 = I_1 + I_2 \approx 0.650\,\text{A}$**
 
 ---
 
-### Step 2: Find Current
-
-$$
-I = \frac{V}{R}
-$$
-
-$$
-I = \frac{12}{8.33}
-$$
-
-$$
-I \approx 1.44\text{ A}
-$$
+## 6. Kirchhoff's Laws again
+*Note: Calculation depends on specific bridge topology in image-k2. If it is a balanced bridge, the ammeter reads $0\,\text{A}$. If unbalanced, apply Mesh analysis.*
 
 ---
 
-## Final Answer
-
-$$
-\boxed{R_{\text{eq}} \approx 8.33\Omega}
-$$
-
-$$
-\boxed{I \approx 1.44\text{ A}}
-$$
+## 7. Capacitors in Parallel
+*   **Total Capacitance ($C_{tot}$):** $C_1 + C_2 = 4\,\mu\text{F} + 6\,\mu\text{F} = 10\,\mu\text{F}$
+*   **Total Charge ($Q$):** $Q = C_{tot} \times V = 10\,\mu\text{F} \times 10\,\text{V} = \mathbf{100\,\mu\text{C}}$
+*   **Total Energy ($U$):** $U = \frac{1}{2} C_{tot} V^2 = \frac{1}{2} (10 \times 10^{-6}) (10)^2 = \mathbf{5 \times 10^{-4}\,\text{J}}$
 
 ---
 
-# 2. Resistors
-
-You have exactly three \(1\Omega\) resistors.
-
-Find all possible unique equivalent resistances.
-
----
-
-## Using One Resistor
-
-$$
-R = 1\Omega
-$$
+## 8. AC Voltage Equation
+By Ohm's Law: $V(t) = I(t) \times R$
+*   $V(t) = (2 \sin(120\pi t)) \times 50$
+*   **$V(t) = 100 \sin(120\pi t)\,\text{V}$**
 
 ---
 
-## Using Two Resistors
-
-### Series Connection
-
-$$
-R = 1 + 1 = 2\Omega
-$$
-
-### Parallel Connection
-
-$$
-R = \frac{1 \cdot 1}{1+1}
-=
-\frac12\Omega
-$$
+## 9. Current
+$I(t) = \frac{dQ}{dt}$. Given $Q(t) = 5t^2 + 5$:
+*   $I(t) = 10t$
+*   At $t=3\,\text{s}$: $I(3) = 10(3) = \mathbf{30\,\text{A}}$
 
 ---
 
-## Using Three Resistors
-
-### All in Series
-
-$$
-R = 1+1+1 = 3\Omega
-$$
+## 10. Average Current
+$I_{avg} = \frac{\Delta Q}{\Delta t}$
+*   $I_{avg} = \frac{30\,\text{C}}{0.002\,\text{s}} = \mathbf{15,000\,\text{A}}$
 
 ---
 
-### All in Parallel
-
-$$
-\frac1R = 1+1+1 = 3
-$$
-
-$$
-R = \frac13\Omega
-$$
+## 11. Power & Energy
+*   **Power ($P$):** $P = \frac{V^2}{R} = \frac{50^2}{100} = \frac{2500}{100} = \mathbf{25\,\text{W}}$
+*   **Energy ($E$):** $E = P \times t = 25\,\text{W} \times (5 \times 60\,\text{s}) = 25 \times 300 = \mathbf{7,500\,\text{J}}$
 
 ---
 
-### Two in Parallel + One in Series
-
-First combine two resistors:
-
-$$
-R = \frac12\Omega
-$$
-
-Add third resistor in series:
-
-$$
-R = \frac12 + 1
-=
-\frac32\Omega
-$$
+## 12. Transformer Currents
+*   **Secondary Voltage ($V_s$):** $V_s = V_p \times (\frac{N_s}{N_p}) = 120 \times (\frac{200}{1000}) = \mathbf{24\,\text{V}}$
+*   **Primary Current ($I_p$):** $I_p = I_s \times (\frac{N_s}{N_p}) = 3 \times (\frac{200}{1000}) = \mathbf{0.6\,\text{A}}$
 
 ---
 
-### Two in Series + One in Parallel
-
-First combine two resistors:
-
-$$
-R = 2\Omega
-$$
-
-Now place in parallel with third resistor:
-
-$$
-R
-=
-\frac{2 \cdot 1}{2+1}
-=
-\frac23\Omega
-$$
+## 13. Transformer Ratio
+$\frac{N_s}{N_p} = \frac{V_s}{V_p} \Rightarrow N_s = 400 \times (\frac{9}{120})$
+*   **$N_s = 30\,\text{turns}$**
 
 ---
 
-## Final List of Unique Values
-
-$$
-\boxed{
-\frac13,\;
-\frac12,\;
-\frac23,\;
-1,\;
-\frac32,\;
-2,\;
-3
-\;\Omega
-}
-$$
+## 14. RLC Circuit
+**Differential Equation:**
+$$L \frac{d^2Q}{dt^2} + R \frac{dQ}{dt} + \frac{1}{C}Q = V(t)$$
+**Analogies with Damped Harmonic Oscillator ($m\ddot{x} + b\dot{x} + kx = F$):**
+*   **Inductance ($L$)** $\approx$ Mass ($m$)
+*   **Resistance ($R$)** $\approx$ Damping Coefficient ($b$)
+*   **Reciprocal Capacitance ($1/C$)** $\approx$ Spring Constant ($k$)
+*   **Charge ($Q$)** $\approx$ Displacement ($x$)
 
 ---
 
-# 3. Mixed Circuit
-
-(All resistors are \(5\Omega\))
-
-The exact answer depends on the circuit diagram.
-
-General solving method:
-
-1. Find resistors connected directly in series
-2. Replace them with equivalent resistance
-3. Find parallel combinations
-4. Continue simplifying step by step
-
-For series resistors:
-
-$$
-R_{\text{series}} = R_1 + R_2
-$$
-
-For parallel resistors:
-
-$$
-R_{\text{parallel}}
-=
-\frac{R_1R_2}{R_1+R_2}
-$$
-
----
-
-# 4. Mixed Circuit
-
-(All resistors are \(10\Omega\))
-
-Again, the exact numerical solution depends on the diagram.
-
-Use the same process:
-
-- Simplify series sections
-- Simplify parallel sections
-- Continue until only one resistor remains
-
----
-
-# 5. Kirchhoff’s Laws
-
-Given:
-
-- \(R_1 = 20\Omega\)
-- \(R_2 = 10\Omega\)
-- Internal resistance \(r_w = 1\Omega\)
-- \(\mathcal E_1 = 4.5\text{ V}\)
-- \(\mathcal E_2 = 9\text{ V}\)
-
-Unknown currents:
-
-- \(I_1\)
-- \(I_2\)
-- \(I_3\)
-
----
-
-## Step 1: Kirchhoff Junction Rule
-
-At the top node:
-
-$$
-I_1 + I_3 = I_2
-$$
-
----
-
-## Step 2: Left Loop Equation
-
-Using Kirchhoff’s voltage law:
-
-$$
-4.5 - 20I_1 - 1I_1 - 10I_2 = 0
-$$
-
-Simplify:
-
-$$
-4.5 - 21I_1 - 10I_2 = 0
-$$
-
----
-
-## Step 3: Right Loop Equation
-
-$$
-9 - 1I_3 - 10I_2 = 0
-$$
-
-Simplify:
-
-$$
-9 - I_3 - 10I_2 = 0
-$$
-
----
-
-## Step 4: Solve the System
-
-From junction rule:
-
-$$
-I_2 = I_1 + I_3
-$$
-
-Substitute into loop equations and solve.
-
-Final values:
-
-$$
-\boxed{I_1 \approx -0.136\text{ A}}
-$$
-
-$$
-\boxed{I_2 \approx 0.804\text{ A}}
-$$
-
-$$
-\boxed{I_3 \approx 0.940\text{ A}}
-$$
-
-Negative current means the true direction is opposite to the assumed direction.
-
----
-
-# 6. Kirchhoff’s Laws Again
-
-The exact answer depends on the circuit image.
-
-General method:
-
-1. Apply Kirchhoff junction rule
-2. Apply loop equations
-3. Solve simultaneous equations
-4. Determine ammeter current
-
----
-
-# 7. Capacitors in Parallel
-
-Given:
-
-- \(C_1 = 4\mu\text F\)
-- \(C_2 = 6\mu\text F\)
-- \(V = 10\text V\)
-
----
-
-## Step 1: Equivalent Capacitance
-
-For parallel capacitors:
-
-$$
-C_{\text{eq}} = C_1 + C_2
-$$
-
-$$
-C_{\text{eq}} = 4 + 6 = 10\mu\text F
-$$
-
----
-
-## Step 2: Total Charge
-
-$$
-Q = CV
-$$
-
-$$
-Q = (10 \times 10^{-6})(10)
-$$
-
-$$
-Q = 100 \times 10^{-6}\text C
-$$
-
-$$
-Q = 100\mu\text C
-$$
-
----
-
-## Step 3: Total Energy
-
-$$
-U = \frac12CV^2
-$$
-
-$$
-U
-=
-\frac12
-(10\times10^{-6})
-(10^2)
-$$
-
-$$
-U = 5\times10^{-4}\text J
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{Q = 100\mu\text C}
-$$
-
-$$
-\boxed{U = 5\times10^{-4}\text J}
-$$
-
----
-
-# 8. AC Voltage Equation
-
-Given:
-
-$$
-I(t)=2\sin(120\pi t)
-$$
-
-Resistance:
-
-$$
-R=50\Omega
-$$
-
----
-
-## Step 1: Use Ohm’s Law
-
-$$
-V(t)=IR
-$$
-
-Substitute:
-
-$$
-V(t)
-=
-50 \cdot 2\sin(120\pi t)
-$$
-
-$$
-V(t)
-=
-100\sin(120\pi t)
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{
-V(t)=100\sin(120\pi t)\text{ V}
-}
-$$
-
----
-
-# 9. Current
-
-Given:
-
-$$
-Q(t)=5t^2+5
-$$
-
-Current is rate of charge flow:
-
-$$
-I(t)=\frac{dQ}{dt}
-$$
-
-Differentiate:
-
-$$
-I(t)=10t
-$$
-
-At \(t=3\):
-
-$$
-I(3)=10(3)=30\text A
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{30\text A}
-$$
-
----
-
-# 10. Average Current
-
-Given:
-
-- Charge: \(Q=30\text C\)
-- Time: \(t=2\text{ ms}=0.002\text s\)
-
-Use:
-
-$$
-I=\frac Qt
-$$
-
-Substitute:
-
-$$
-I=\frac{30}{0.002}
-$$
-
-$$
-I=15000\text A
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{1.5\times10^4\text A}
-$$
-
----
-
-# 11. Power & Energy
-
-Given:
-
-- \(R=100\Omega\)
-- \(V=50\text V\)
-
----
-
-## Step 1: Power
-
-$$
-P=\frac{V^2}{R}
-$$
-
-$$
-P=\frac{50^2}{100}
-$$
-
-$$
-P=\frac{2500}{100}=25\text W
-$$
-
----
-
-## Step 2: Energy
-
-Time:
-
-$$
-t=5\text{ min}=300\text s
-$$
-
-Energy:
-
-$$
-E=Pt
-$$
-
-$$
-E=25(300)
-$$
-
-$$
-E=7500\text J
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{P=25\text W}
-$$
-
-$$
-\boxed{E=7500\text J}
-$$
-
----
-
-# 12. Transformer Currents
-
-Given:
-
-- \(N_p=1000\)
-- \(N_s=200\)
-- \(V_p=120\text V\)
-
----
-
-## Step 1: Secondary Voltage
-
-Transformer equation:
-
-$$
-\frac{V_s}{V_p}
-=
-\frac{N_s}{N_p}
-$$
-
-Substitute:
-
-$$
-V_s
-=
-120\cdot\frac{200}{1000}
-$$
-
-$$
-V_s=24\text V
-$$
-
----
-
-## Step 2: Primary Current
-
-Power conservation:
-
-$$
-V_pI_p=V_sI_s
-$$
-
-Substitute:
-
-$$
-120I_p=24(3)
-$$
-
-$$
-120I_p=72
-$$
-
-$$
-I_p=0.6\text A
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{V_s=24\text V}
-$$
-
-$$
-\boxed{I_p=0.6\text A}
-$$
-
----
-
-# 13. Transformer Ratio
-
-Given:
-
-- \(V_p=120\text V\)
-- \(V_s=9\text V\)
-- \(N_p=400\)
-
-Use transformer equation:
-
-$$
-\frac{V_s}{V_p}
-=
-\frac{N_s}{N_p}
-$$
-
-Substitute:
-
-$$
-N_s
-=
-400\cdot\frac{9}{120}
-$$
-
-$$
-N_s=30
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{30\text{ turns}}
-$$
-
----
-
-# 14. RLC Circuit
-
-For a series RLC circuit:
-
-$$
-V(t)
-=
-L\frac{dI}{dt}
-+
-RI
-+
-\frac1C\int I\,dt
-$$
-
-Differentiate both sides:
-
-$$
-L\frac{d^2I}{dt^2}
-+
-R\frac{dI}{dt}
-+
-\frac1CI
-=
-\frac{dV}{dt}
-$$
-
----
-
-## Comparison with Damped Harmonic Oscillator
-
-Mechanical equation:
-
-$$
-m\frac{d^2x}{dt^2}
-+
-b\frac{dx}{dt}
-+
-kx
-=
-F(t)
-$$
-
----
-
-## Analogies
-
-| Electrical Quantity | Mechanical Analogy |
-|---|---|
-| Current \(I\) | Position/velocity |
-| Inductance \(L\) | Mass \(m\) |
-| Resistance \(R\) | Damping coefficient \(b\) |
-| \(1/C\) | Spring constant \(k\) |
-| Voltage \(V\) | External force \(F\) |
-
----
-
-# 15. Resistor Cube
-
-A cube has 12 identical resistors of resistance \(R\).
-
-Find equivalent resistance between opposite corners.
-
----
-
-## Step 1: Use Symmetry
-
-Because the cube is perfectly symmetrical:
-
-- Current splits equally into three branches from the starting corner
-- Several nodes become equipotential points
-
-This allows simplification of the network.
-
----
-
-## Step 2: Solve Using Kirchhoff’s Laws
-
-After simplifying the equivalent paths and solving the system:
-
-$$
-R_{\text{eq}}
-=
-\frac56R
-$$
-
----
-
-## Final Answer
-
-$$
-\boxed{
-R_{\text{eq}}=\frac56R
-}
-$$
+## 15. Resistor Cube*
+For 12 identical resistors $R$ forming a cube, the equivalent resistance between opposite corners is found via symmetry (splitting current into 3 paths, then 6, then 3):
+*   $R_{eq} = (\frac{1}{3}R + \frac{1}{6}R + \frac{1}{3}R) = \mathbf{\frac{5}{6}R}$
